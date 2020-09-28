@@ -73,25 +73,26 @@ $(document).ready(function(){
       $(".modal").show();
       // Get list item id
       var id = $(this).parent().attr("id");
-      console.log(id);
+      // console.log(id);
       var textToEdit = $(this).siblings(".item-text")
-      console.log(textToEdit);
+      // console.log(textToEdit);
 
       //UPDATE - "PATCH" edit element list
       $("#edit").click(
         function(){
-          var itemText = $("edit-item").val();
-          if (itemText != "") {
+          var editedText = $("#edit-item").val();
+          // console.log(editedText);
+          if (editedText != "") {
             $.ajax(
               {
                 "url": "http://157.230.17.132:3001/todos/" + id,
                 "method": "PATCH",
                 "data": {
-                  "text": itemText,
+                  "text": editedText,
                 },
                 "success": function(data){
-                  console.log(data);
-                  textToEdit.text(itemText);
+                  // console.log(data);
+                  textToEdit.text(editedText);
                 },
                 "error": function(error){
                   alert("Errore");
