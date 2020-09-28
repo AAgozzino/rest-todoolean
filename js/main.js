@@ -42,6 +42,31 @@ $(document).ready(function(){
       }
     }
   );
+
+  // DELETE - "DELETE" element from to-do list
+  $("#to-do-list").on("click", ".far.fa-trash-alt",
+    function(){
+      var listElement = $(this).parent();
+      //console.log(listElement);
+      var id = listElement.attr("id");
+      //console.log(id);
+
+      $.ajax(
+        {
+          "url": "http://157.230.17.132:3001/todos/" + id,
+          "method": "DELETE",
+          "success": function(data){
+            //console.log(data);
+            listElement.remove();
+          },
+          "error": function(error){
+            alert("Errore");
+          }
+        }
+      );
+    }
+  );
+
 });
 
 // FUNCTION - render to-do List
