@@ -15,7 +15,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
-    
+    <div class="page-wrapper">
+      <div class="list-container">
+        <h1>La tua to-do list</h1>
+        <input id="new-item" type="text">
+        <button type="button" name="add">Aggiungi</button>
+        <ul id="to-do-list">
+
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- HANDLEBARS TEMPLATE - List item -->
+    <script id="item-template" type="text/x-handlebars-template">
+      <li id="{{id}}" class="list-item">{{text}}</li>
+    </script>
     <!-- JavaScript -->
     <script src="js/main.js" charset="utf-8"></script>
   </body>
