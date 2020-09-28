@@ -67,6 +67,51 @@ $(document).ready(function(){
     }
   );
 
+  // Show modal
+  $("#to-do-list").on("click", ".far.fa-edit",
+    function(){
+      $(".modal").show();
+      // Get list item id
+      var id = $(this).parent().attr("id");
+      console.log(id);
+      var textToEdit = $(this).siblings(".item-text")
+      console.log(textToEdit);
+
+      //UPDATE - "PATCH" edit element list
+      $("#edit").click(
+        function(){
+          var itemText = $("edit-item").val();
+          if (itemText != "") {
+            $.ajax(
+              {
+                "url": "http://157.230.17.132:3001/todos/" + id,
+                "method": "PATCH",
+                "data": {
+                  "text": itemText,
+                },
+                "success": function(data){
+                  console.log(data);
+                  textToEdit.text(itemText);
+                },
+                "error": function(error){
+                  alert("Errore");
+                }
+              }
+            );
+            // Close modal
+            $(".modal").hide();
+          }
+        }
+      )
+    }
+  );
+
+  // Close modal
+  $(".modal .far.fa-times-circle").click(
+    function(){
+      $(".modal").hide();
+    }
+  )
 });
 
 // FUNCTION - render to-do List

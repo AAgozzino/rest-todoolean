@@ -25,11 +25,26 @@
         </ul>
       </div>
 
+      <!-- MODAL -->
+      <div class="modal">
+        <div class="modal-content">
+          <!-- Close button -->
+          <i class="far fa-times-circle"></i>
+          <h2>Modifica elemento</h2>
+          <input id="edit-item" type="text" placeholder="Modifica elemento">
+          <button id="edit" type="button" name="edit">Modifica</button>
+        </div>
+      </div>
     </div>
+    <!-- /MODAL -->
 
     <!-- HANDLEBARS TEMPLATE - List item -->
     <script id="item-template" type="text/x-handlebars-template">
-      <li id="{{id}}" class="list-item">{{text}} <i class="far fa-trash-alt"></i></li>
+      <li id="{{id}}" class="list-item">
+        <p class="item-text">{{text}}</p>
+        <i class="far fa-trash-alt"></i>
+        <i class="far fa-edit"></i>
+      </li>
     </script>
     <!-- JavaScript -->
     <script src="js/main.js" charset="utf-8"></script>

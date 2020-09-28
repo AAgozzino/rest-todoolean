@@ -17,3 +17,33 @@
   background-color: grey;
   border: 1px solid black;
 }
+
+/* MODAL */
+.modal{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content{
+  display: inline-block;
+  position: relative;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 10% auto;
+  padding: 40px 20px;
+  border: 1px solid black;
+  background-color: green;
+}
+
+.modal-content .far.fa-times-circle{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
