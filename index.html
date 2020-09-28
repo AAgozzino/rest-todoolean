@@ -17,7 +17,7 @@
   <body>
     <div class="page-wrapper">
       <div class="list-container">
-        <h1>La tua to-do list</h1>
+        <h1>To-do</h1>
         <input id="new-item" type="text" placeholder="Aggiungi elemento">
         <button id="add" type="button" name="add">Aggiungi</button>
         <ul id="to-do-list">
@@ -42,8 +42,10 @@
     <script id="item-template" type="text/x-handlebars-template">
       <li id="{{id}}" class="list-item">
         <p class="item-text">{{text}}</p>
-        <i class="far fa-trash-alt"></i>
-        <i class="far fa-edit"></i>
+        <div class="icons">
+          <i class="far fa-trash-alt"></i>
+          <i class="far fa-edit"></i>
+        </div>
       </li>
     </script>
     <!-- JavaScript -->
